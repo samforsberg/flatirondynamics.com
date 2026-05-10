@@ -3,145 +3,138 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flatiron Dynamics | Coming Soon</title>
-  <meta name="description" content="Flatiron Dynamics is building cutting-edge robotics parts inspired by Boulder precision, mountain grit, and next-generation motion." />
+  <title>Flatiron Dynamics | Precision Robotics Hardware</title>
+  <meta name="description" content="Flatiron Dynamics builds precision robotics components inspired by Boulder engineering and the Flatirons." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="flatiron-icon.png">
+  <link rel="icon" href="./favicon.ico?v=4" sizes="any">
+  <link rel="icon" type="image/png" href="./flatiron-icon.png?v=4">
+  <link rel="shortcut icon" href="./favicon.ico?v=4">
+  <link rel="apple-touch-icon" href="./flatiron-icon.png?v=4">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <canvas id="particleCanvas" aria-hidden="true"></canvas>
-
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
-  <div class="grain"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
   <header class="site-header">
     <a class="brand" href="#home" aria-label="Flatiron Dynamics home">
-      <img src="flatiron-icon.png" alt="Flatiron Dynamics logo" class="brand-logo">
-      <span>Flatiron Dynamics</span>
+      <img src="flatiron-icon.png" alt="Flatiron Dynamics mark" class="brand-logo">
+      <span class="brand-wordmark"><span>Flatiron</span><small>Dynamics</small></span>
     </a>
-
     <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#parts">Parts</a>
-      <a href="#mission">Mission</a>
+      <a href="#drive">Drive</a>
+      <a href="#engineering">Engineering</a>
+      <a href="#roadmap">Roadmap</a>
       <a href="#founders">Founders</a>
-      <a href="#notify" class="nav-button">Notify Me</a>
+      <a href="#notify" class="nav-button">Launch List</a>
     </nav>
-
-    <button class="menu-button" aria-label="Open menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-    </button>
+    <button class="menu-button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
   </header>
 
   <main id="home">
-    <section class="hero section-reveal">
-      <div class="hero-copy">
-        <div class="eyebrow">
-          <span class="pulse-dot"></span>
-          Coming soon to flatirondynamics.com
-        </div>
-
-        <h1>Robotics parts engineered with mountain-grade precision.</h1>
-
-        <p class="hero-text">
-          Flatiron Dynamics is building cutting-edge robotics components for makers, labs, startups, and anyone pushing machines past ordinary limits.
-        </p>
-
+    <section class="hero section-reveal parallax-section">
+      <div class="hero-copy parallax" data-speed="-0.08">
+        <p class="eyebrow"><span></span> Precision robotics hardware</p>
+        <h1>Mountain-grade motion for the next generation of robots.</h1>
+        <div class="hero-line" aria-hidden="true"></div>
+        <p class="hero-text">Flatiron Dynamics is building clean, affordable, high-precision robotics components, starting with a low-cost cycloidal drive platform targeted for Q4 2026.</p>
         <div class="hero-actions">
           <a href="#notify" class="primary-button">Join the Launch List</a>
-          <a href="#parts" class="secondary-button">Explore the Vision</a>
+          <a href="#drive" class="secondary-button">See the First Product</a>
         </div>
-
-        <div class="status-row" aria-label="Company status stats">
-          <div>
-            <strong data-count="2026">0</strong>
-            <span>launch target</span>
-          </div>
-          <div>
-            <strong data-count="4">0</strong>
-            <span>product families</span>
-          </div>
-          <div>
-            <strong data-count="2">0</strong>
-            <span>co-founders</span>
-          </div>
+        <div class="status-row">
+          <article class="metric-featured"><strong data-count="2026" data-format="year">0</strong><span>Target launch</span></article>
+          <article><strong data-count="3">0</strong><span>Core design goals</span></article>
+          <article><strong data-count="2">0</strong><span>Co-founders</span></article>
         </div>
       </div>
 
-      <div class="hero-visual" aria-label="Flatiron mountain robotics illustration">
-        <div class="sun"></div>
-        <svg class="mountains" viewBox="0 0 700 470" role="img" aria-label="Stylized Flatirons mountain graphic">
+      <div class="hero-stage parallax" data-speed="0.08">
+        <div class="orbital-ring"></div>
+        <svg class="line-mountains" viewBox="0 0 900 560" role="img" aria-label="Thin line Flatirons mountain illustration">
           <defs>
-            <linearGradient id="ridgeGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#d9f7e8" stop-opacity="0.95" />
-              <stop offset="45%" stop-color="#68d8ff" stop-opacity="0.62" />
-              <stop offset="100%" stop-color="#7d6bff" stop-opacity="0.58" />
+            <linearGradient id="mountainStroke" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#eef5ff" />
+              <stop offset="48%" stop-color="#8fa6c0" />
+              <stop offset="100%" stop-color="#6ce8d2" />
             </linearGradient>
-            <linearGradient id="forestGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#5effb9" stop-opacity="0.85" />
-              <stop offset="100%" stop-color="#0e3b32" stop-opacity="0.8" />
+            <linearGradient id="mountainFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#9fb4cf" stop-opacity="0.16" />
+              <stop offset="100%" stop-color="#102235" stop-opacity="0.04" />
             </linearGradient>
           </defs>
-
-          <path class="ridge ridge-one" d="M55 392 L188 90 L292 392 Z" />
-          <path class="ridge ridge-two" d="M210 392 L385 55 L470 392 Z" />
-          <path class="ridge ridge-three" d="M380 392 L555 120 L655 392 Z" />
-          <path class="ridge-line" d="M188 90 L238 392" />
-          <path class="ridge-line" d="M385 55 L415 392" />
-          <path class="ridge-line" d="M555 120 L598 392" />
-
-          <path class="tree-line" d="M40 392 C105 352 159 356 210 384 C278 330 356 346 421 385 C505 331 586 352 675 388 L675 430 L40 430 Z" />
-
-          <g class="circuit-lines">
-            <path d="M150 292 H250 V230 H350" />
-            <path d="M420 295 H515 V250 H590" />
-            <path d="M285 350 V302 H372 V260" />
-            <circle cx="350" cy="230" r="7" />
-            <circle cx="590" cy="250" r="7" />
-            <circle cx="372" cy="260" r="7" />
-          </g>
+          <path class="mountain-fill" d="M38 438 L176 322 L246 230 L300 312 L420 176 L480 92 L532 256 L592 210 L742 378 L862 438 Z" />
+          <path class="mountain-main" d="M38 438 L176 322 L246 230 L300 312 L420 176 L480 92 L532 256 L592 210 L742 378 L862 438" />
+          <path class="mountain-sub" d="M174 324 L214 404 L300 312 L246 230" />
+          <path class="mountain-sub" d="M302 312 L386 438 L480 92" />
+          <path class="mountain-sub" d="M420 176 L444 438" />
+          <path class="mountain-sub" d="M532 256 L486 438 L592 210" />
+          <path class="mountain-sub" d="M592 210 L640 438 L742 378" />
+          <path class="mountain-back" d="M0 390 L120 350 L230 374 L355 306 L450 342 L565 286 L666 330 L760 292 L900 340" />
+          <path class="tree-line-art" d="M170 448 l14 -28 l14 28 M212 448 l10 -21 l10 21 M252 448 l18 -35 l18 35 M658 448 l14 -28 l14 28 M702 448 l10 -22 l10 22 M738 448 l16 -33 l16 33" />
+          <path class="ground-line" d="M26 438 H874" />
         </svg>
-
-        <div class="robot-card glass-card">
-          <span class="chip-label">FD-01</span>
-          <h3>Precision Motion Platform</h3>
-          <p>Modular drive systems, brackets, end effectors, and control-ready hardware.</p>
+        <div class="spec-card spec-one glass-card">
+          <span>01</span>
+          <strong>High reduction</strong>
+          <p>Compact cycloidal motion for robotics builders.</p>
+        </div>
+        <div class="spec-card spec-two glass-card">
+          <span>02</span>
+          <strong>Built to iterate</strong>
+          <p>Designed around manufacturable parts and fast testing.</p>
         </div>
       </div>
     </section>
 
-    <section id="parts" class="feature-grid section-reveal">
-      <article class="feature-card">
-        <span class="icon">△</span>
-        <h2>Structural robotics parts</h2>
-        <p>Lightweight, rigid, manufacturable components designed for real machines, not just CAD renders.</p>
-      </article>
-
-      <article class="feature-card">
-        <span class="icon">◌</span>
-        <h2>Motion systems</h2>
-        <p>Launching Q4 2026: a low-cost, high-precision cycloidal drive engineered for robotics builders, startups, automation systems, and advanced motion platforms.</p>
-      </article>
-
-      <article class="feature-card">
-        <span class="icon">⌁</span>
-        <h2>Electronics-ready design</h2>
-        <p>Parts made to work with sensors, boards, wiring, and controls from the first prototype onward.</p>
-      </article>
+    <section id="drive" class="product-showcase section-reveal">
+      <div class="sticky-copy">
+        <p class="section-kicker">First platform</p>
+        <h2>A low-cost cycloidal drive without the cheap feel.</h2>
+        <p>Our first product is focused on the problem most small robotics teams hit early: precision motion gets expensive fast. FD-01 is being designed to make high-ratio, compact motion more accessible without giving up stiffness, repeatability, or a clean integration path.</p>
+      </div>
+      <div class="product-panels">
+        <article class="product-panel reveal-card">
+          <span>Precision</span>
+          <h3>Reduced backlash, smoother control.</h3>
+          <p>Made for arms, mobile robots, research rigs, and compact automation where sloppy motion ruins the whole system.</p>
+        </article>
+        <article class="product-panel reveal-card">
+          <span>Cost</span>
+          <h3>Designed for builders, not only big labs.</h3>
+          <p>Simple manufacturing choices, modular sizing, and practical materials keep the platform realistic for early teams.</p>
+        </article>
+        <article class="product-panel reveal-card">
+          <span>Integration</span>
+          <h3>Mechanical-first, electronics-aware.</h3>
+          <p>Mounting, wiring, sensing, and motor compatibility are treated as part of the product, not an afterthought.</p>
+        </article>
+      </div>
     </section>
 
-    <section id="mission" class="split-section section-reveal">
-      <div>
-        <p class="section-kicker">Built in Boulder</p>
-        <h2>Inspired by the Flatirons. Designed for the next wave of robotics.</h2>
+    <section id="engineering" class="cinematic section-reveal">
+      <p class="section-kicker">Engineering DNA</p>
+      <h2>Clean geometry. Real constraints. Hardware that can leave the screen.</h2>
+      <div class="engineering-grid">
+        <article><span>CAD to bench</span><p>Designed for real prototyping, tolerance checks, and fast mechanical iteration.</p></article>
+        <article><span>Rigid by default</span><p>Focused on stiffness, repeatability, and load paths that make sense.</p></article>
+        <article><span>Boulder built</span><p>Inspired by the Flatirons and built with a practical engineering mindset.</p></article>
+        <article><span>Robotics ready</span><p>Parts planned around motors, sensors, wiring, controls, and assembly.</p></article>
       </div>
-      <p>
-        Our first platform focuses on delivering affordable precision motion systems without compromising rigidity, repeatability, or engineering quality.  From prototype parts to production-ready systems, Flatiron Dynamics is focused on clean engineering, fast iteration, and hardware that feels solid in your hands.
-      </p>
+    </section>
+
+    <section id="roadmap" class="timeline section-reveal">
+      <div class="section-heading">
+        <p class="section-kicker">Roadmap</p>
+        <h2>From prototype to launch.</h2>
+      </div>
+      <div class="timeline-track">
+        <article><small>Now</small><h3>Concept validation</h3><p>Design studies, sizing, material selection, and test hardware planning.</p></article>
+        <article><small>Next</small><h3>Prototype testing</h3><p>Bench testing for stiffness, smoothness, assembly time, and failure points.</p></article>
+        <article><small>Q4 2026</small><h3>FD-01 launch</h3><p>Early access drop for the first Flatiron Dynamics motion platform.</p></article>
+      </div>
     </section>
 
     <section id="founders" class="founders section-reveal">
@@ -149,23 +142,9 @@
         <p class="section-kicker">Leadership</p>
         <h2>Founded by builders.</h2>
       </div>
-
       <div class="founder-grid">
-        <article class="founder-card glass-card">
-          <div class="avatar">KF</div>
-          <div>
-            <h3>Kale Fowler</h3>
-            <p>Co-CEO</p>
-          </div>
-        </article>
-
-        <article class="founder-card glass-card">
-          <div class="avatar">SF</div>
-          <div>
-            <h3>Sam Forsberg</h3>
-            <p>Co-CEO</p>
-          </div>
-        </article>
+        <article class="founder-card glass-card"><div class="avatar">KF</div><div><h3>Kale Fowler</h3><p>Co-CEO</p></div></article>
+        <article class="founder-card glass-card"><div class="avatar">SF</div><div><h3>Sam Forsberg</h3><p>Co-CEO</p></div></article>
       </div>
     </section>
 
@@ -173,10 +152,9 @@
       <div class="notify-card glass-card">
         <div>
           <p class="section-kicker">Launch updates</p>
-          <h2>Be first when the shop opens.</h2>
-          <p>Get notified when Flatiron Dynamics launches new robotics parts, prototypes, and early-access drops.</p>
+          <h2>Get the first look when FD-01 is ready.</h2>
+          <p>Join the early list for prototype updates, launch timing, and first access to new robotics hardware.</p>
         </div>
-
         <form id="notifyForm" class="notify-form">
           <label for="email" class="sr-only">Email address</label>
           <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required />
@@ -189,7 +167,7 @@
 
   <footer>
     <img src="flatiron-logo-transparent.png" alt="Flatiron Dynamics full logo" class="footer-logo">
-    <p>© <span id="year"></span> Flatiron Dynamics. Precision robotics systems inspired by Boulder engineering and the Flatirons.</p>
+    <p>© <span id="year"></span> Flatiron Dynamics. Advancing robotics. Elevating possibilities.</p>
   </footer>
 
   <script src="script.js"></script>
